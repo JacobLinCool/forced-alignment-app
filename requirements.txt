@@ -1,0 +1,5 @@
+gradio
+accelerate
+iso639-lang
+librosa
+git+https://github.com/MahmoudAshraf97/ctc-forced-aligner.git
