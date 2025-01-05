@@ -1,3 +1,4 @@
+spaces
 gradio
 accelerate
 iso639-lang

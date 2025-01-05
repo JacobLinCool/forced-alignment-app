@@ -1,3 +1,4 @@
+import spaces
 import gradio as gr
 import json
 import torch
@@ -24,6 +25,7 @@ alignment_model, alignment_tokenizer = load_alignment_model(
 )
 
 
+@spaces.GPU
 def process_alignment(audio_waveform, text, language="eng"):
     print(f"{audio_waveform.shape=}, {text=}, {language=}")
     # Generate emissions
