@@ -25,7 +25,6 @@ alignment_model, alignment_tokenizer = load_alignment_model(
 )
 
 
-@spaces.GPU
 def process_alignment(audio_waveform, text, language="eng"):
     print(f"{audio_waveform.shape=}, {text=}, {language=}")
     # Generate emissions
@@ -66,6 +65,7 @@ def get_language_choices():
     return [f"{lang.pt3} - {lang.name}" for lang in iter_langs() if lang.pt3]
 
 
+@spaces.GPU
 def align(audio, text, language="eng - English"):
     # Extract the ISO 639-3 code from the selected language
     iso_code = language.split(" - ")[0]
@@ -100,6 +100,7 @@ def align(audio, text, language="eng - English"):
     return trimmed_audio, json.dumps(output_json, indent=2)
 
 
+@spaces.GPU
 def align_result_only(audio, text, language="eng - English"):
     # Extract the ISO 639-3 code from the selected language
     iso_code = language.split(" - ")[0]
